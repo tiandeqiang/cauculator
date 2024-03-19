@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<header>
+    wendy cauculator
+</header>
+
+<body>
+    <div>
+        <h4 id="dinner">dinner现金<input type="number" id="dinner_cash" /></h4>
+        <h4>铁板现金<input type="number" id="habachi_cash" /></h4>
+
+        <h4>铁板信用卡<input type="number" id="habachi_credit" /></h4>
+        <h4>dinner信用卡<input type="number" id="dinner_credit" /></h4>
+
+        <h4 id="net">NET</h4>
+        <h4>HIB 2%<input type="number" id="habachi_2" />
+            <h5 id="habachi_2d">0</h5>
+        </h4>
+        <h4>DIN 2%<input type="number" id="din_2" />
+            <h5 id="din_2d">0</h5>
+        </h4>
+        <h4>SUSHI 50%<input type="number" id="sushi_50" />
+            <h5 id="sushi_50d">0</h5>
+        </h4>
+        <br>
+        <h4>SUSHI <input type="number" id="sushi" /></h4>
+        <h4>HIB TIP<input type="number" id="habachi_tip" /></h4>
+
+        <h4 id="cash_total">总计</h4>
+        <button id="jishuan">计算</button>
+
+    </div>
+
+    <script>
+
+        var jishuan = document.getElementById("jishuan");
+        jishuan.addEventListener("click", total);
+
+        function total() {
+            var dinner_cash = document.getElementById("dinner_cash").value;
+            dinner_cash = parseFloat(dinner_cash)
+            var habachi_cash = document.getElementById("habachi_cash").value;
+            habachi_cash = parseFloat(habachi_cash);
+
+            var habachi_credit = document.getElementById("habachi_credit").value;
+            habachi_credit = parseFloat(habachi_credit)
+            var dinner_credit = document.getElementById("dinner_credit").value;
+            dinner_credit = parseFloat(dinner_credit);
+
+            var net = (dinner_cash + habachi_cash) - (habachi_credit + dinner_credit);
+            document.getElementById("net").innerHTML = "net是：" + net;
+
+
+
+            var habachi_2 = document.getElementById("habachi_2").value;
+            habachi_2 = (parseFloat(habachi_2)) * 0.02;
+            document.getElementById("habachi_2d").innerHTML = habachi_2;
+
+
+            var din_2 = document.getElementById("din_2").value;
+            din_2 = (parseFloat(din_2)) * 0.02;
+            document.getElementById("din_2d").innerHTML = din_2;
+
+            var sushi_50 = document.getElementById("sushi_50").value;
+            sushi_50 = (parseFloat(sushi_50)) * 0.5;
+            document.getElementById("sushi_50d").innerHTML = sushi_50;
+
+            var sushi = document.getElementById("sushi").value;
+            sushi = parseFloat(sushi);
+            var habachi_tip = document.getElementById("habachi_tip").value;
+            habachi_tip = parseFloat(habachi_tip);
+
+            var total = habachi_2 + din_2 + sushi_50 + sushi + habachi_tip + net;
+
+            document.getElementById("cash_total").innerHTML = total;
+
+
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+
+</html>
