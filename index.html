@@ -21,9 +21,15 @@
         <h4>SUSHI 50%<input type="number" id="sushi_50" />
             <h5 id="sushi_50d">0</h5>
         </h4>
+
+        <h4>(habachi_tip - HIB 2%)/2<input type="number" id="habachi_tip" />
+            <h5 id="habachi_tipd">0</h5>
+        </h4>
+
         <br>
         <h4>SUSHI <input type="number" id="sushi" /></h4>
-        <h4>HIB TIP<input type="number" id="habachi_tip" /></h4>
+        
+
 
         <h4 id="cash_total">总计</h4>
         <button id="jishuan">计算</button>
@@ -64,10 +70,14 @@
             sushi_50 = (parseFloat(sushi_50)) * 0.5;
             document.getElementById("sushi_50d").innerHTML = sushi_50;
 
+            var habachi_tip = document.getElementById("habachi_tip").value;
+            habachi_tip = (parseFloat(habachi_tip - habachi_2 )) * 0.5;
+            document.getElementById("habachi_tipd").innerHTML = habachi_tip;
+
+
             var sushi = document.getElementById("sushi").value;
             sushi = parseFloat(sushi);
-            var habachi_tip = document.getElementById("habachi_tip").value;
-            habachi_tip = parseFloat(habachi_tip);
+            
 
             var total = habachi_2 + din_2 + sushi_50 + sushi + habachi_tip + net;
 
