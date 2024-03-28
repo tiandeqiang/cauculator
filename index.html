@@ -47,31 +47,37 @@
             var habachi_cash = document.getElementById("habachi_cash").value;
             habachi_cash = parseFloat(habachi_cash);
 
+
             var habachi_credit = document.getElementById("habachi_credit").value;
             habachi_credit = parseFloat(habachi_credit)
             var dinner_credit = document.getElementById("dinner_credit").value;
             dinner_credit = parseFloat(dinner_credit);
 
             var net = (dinner_cash + habachi_cash) - (habachi_credit + dinner_credit);
+            net = Math.round(net);
             document.getElementById("net").innerHTML = "net是：" + net;
 
 
 
             var habachi_2 = document.getElementById("habachi_2").value;
             habachi_2 = (parseFloat(habachi_2)) * 0.02;
+            habachi_2 = Math.round(habachi_2);
             document.getElementById("habachi_2d").innerHTML = habachi_2;
 
 
             var din_2 = document.getElementById("din_2").value;
             din_2 = (parseFloat(din_2)) * 0.02;
+            din_2 = Math.round(din_2);
             document.getElementById("din_2d").innerHTML = din_2;
 
             var sushi_50 = document.getElementById("sushi_50").value;
             sushi_50 = (parseFloat(sushi_50)) * 0.5;
+            sushi_50 = Math.round(sushi_50);
             document.getElementById("sushi_50d").innerHTML = sushi_50;
 
             var habachi_tip = document.getElementById("habachi_tip").value;
             habachi_tip = (parseFloat(habachi_tip - habachi_2 )) * 0.5;
+            habachi_tip = Math.round(habachi_tip);
             document.getElementById("habachi_tipd").innerHTML = habachi_tip;
 
 
@@ -80,7 +86,7 @@
             
 
             var total = habachi_2 + din_2 + sushi_50 + sushi + habachi_tip + net;
-
+            total = Math.round(total);
             document.getElementById("cash_total").innerHTML = total;
 
 
